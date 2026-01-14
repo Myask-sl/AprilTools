@@ -1,0 +1,22 @@
+itemGroup.april_tools_blocks=April Tools' Blocks
+
+tile.tinted_glass_2_0.name=Tinted Glass (2.0)
+tile.torch_out.name=Torch (burnt-out)
+tile.usb_charger.name=USB Charger Block
+
+tile.tinted_glass_2_0.black.name=Black Tinted Glass (2.0)
+tile.tinted_glass_2_0.red.name=Red Tinted Glass (2.0)
+tile.tinted_glass_2_0.green.name=Green Tinted Glass (2.0)
+tile.tinted_glass_2_0.brown.name=Brown Tinted Glass (2.0)
+tile.tinted_glass_2_0.blue.name=Blue Tinted Glass (2.0)
+tile.tinted_glass_2_0.purple.name=Purple Tinted Glass (2.0)
+tile.tinted_glass_2_0.cyan.name=Cyan Tinted Glass (2.0)
+tile.tinted_glass_2_0.silver.name=Light Gray Tinted Glass (2.0)
+tile.tinted_glass_2_0.gray.name=Gray Tinted Glass (2.0)
+tile.tinted_glass_2_0.pink.name=Pink Tinted Glass (2.0)
+tile.tinted_glass_2_0.lime.name=Lime Tinted Glass (2.0)
+tile.tinted_glass_2_0.yellow.name=Yellow Tinted Glass (2.0)
+tile.tinted_glass_2_0.lightBlue.name=Light Blue Tinted Glass (2.0)
+tile.tinted_glass_2_0.magenta.name=Magenta Tinted Glass (2.0)
+tile.tinted_glass_2_0.orange.name=Orange Tinted Glass (2.0)
+tile.tinted_glass_2_0.white.name=White Tinted Glass (2.0)
