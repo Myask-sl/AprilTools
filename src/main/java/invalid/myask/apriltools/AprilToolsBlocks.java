@@ -2,8 +2,11 @@ package invalid.myask.apriltools;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import invalid.myask.apriltools.block.BlockColoredFragile;
+import invalid.myask.apriltools.block.BlockEthoSlab;
 import invalid.myask.apriltools.block.BlockJokeUSBCharger;
 import invalid.myask.apriltools.block.BlockTorchOut;
+import invalid.myask.apriltools.item.ItemEthoSlab;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,6 +20,8 @@ public class AprilToolsBlocks {
     public static final Block TINTED_GLASS_2_0 = new BlockColoredFragile(Material.glass).setStepSound(Block.soundTypeGlass)
         .setHardness(0.3F);
     public static final Block BURNT_TORCH = new BlockTorchOut().setHardness(0.0F).setLightLevel(0);
+    public static final Block ETHO_SLAB = new BlockEthoSlab(false).setHardness(5);
+    public static final Block ETHO_SLAB_DOUBLE = new BlockEthoSlab(true).setHardness(5);
 
     public static final CreativeTabs TAB_APRIL_BLOCKS = new CreativeTabs("april_tools_blocks") {
         @Override
@@ -35,6 +40,10 @@ public class AprilToolsBlocks {
             JOKE_USB_CHARGER.setHarvestLevel("pickaxe", 0);
         registerABlockTabbed(TINTED_GLASS_2_0, ItemCloth.class, "tinted_glass_2_0", CreativeTabs.tabDecorations, TAB_APRIL_BLOCKS);
         registerABlock(BURNT_TORCH, "torch_out", CreativeTabs.tabMisc);
+        registerABlockTabbed(ETHO_SLAB, ItemEthoSlab.class, "etho_slab", CreativeTabs.tabRedstone, TAB_APRIL_BLOCKS,
+                    ETHO_SLAB, ETHO_SLAB_DOUBLE, false);
+        registerABlockTabbed(ETHO_SLAB_DOUBLE, ItemEthoSlab.class, "etho_slab_double", CreativeTabs.tabRedstone, TAB_APRIL_BLOCKS,
+            ETHO_SLAB, ETHO_SLAB_DOUBLE, true);
     }
 
     static void registerABlock(Block applicant, String nom, CreativeTabs vanillaTab, Object... itemBlockCtorArgs) {

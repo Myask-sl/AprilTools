@@ -3,6 +3,7 @@ itemGroup.april_tools_blocks=April Tools' Blocks
 tile.tinted_glass_2_0.name=Tinted Glass (2.0)
 tile.torch_out.name=Torch (burnt-out)
 tile.usb_charger.name=USB Charger Block
+tile.tnt_slab.name=Etho Slab
 
 tile.tinted_glass_2_0.black.name=Black Tinted Glass (2.0)
 tile.tinted_glass_2_0.red.name=Red Tinted Glass (2.0)

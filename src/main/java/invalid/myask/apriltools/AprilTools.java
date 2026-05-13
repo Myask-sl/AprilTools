@@ -12,6 +12,8 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = AprilTools.MODID, version = Tags.VERSION, name = AprilTools.MODNAME, acceptedMinecraftVersions = "["+Tags.MINECRAFT_VERSION+"]")
 public class AprilTools {
+    @Mod.Instance(Tags.MODID)
+    public static AprilTools instance;
 
     public static final String MODID = Tags.MODID;
     public static final String MODNAME = Tags.MODNAME;

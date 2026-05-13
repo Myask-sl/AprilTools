@@ -16,6 +16,7 @@ public class CommonProxy {
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
 
         AprilToolsBlocks.register();
+        AprilToolsEntities.register();
 
         MinecraftForge.EVENT_BUS.register(AprilToolUse.instance);
     }

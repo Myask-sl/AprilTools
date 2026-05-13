@@ -28,5 +28,12 @@ public class AprilToolsRecipes {
                 ));
             }
         }
+        if (Config.etho_slab_enable) {
+            for (int i = 0; i < 2; i++) {
+                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(AprilToolsBlocks.ETHO_SLAB, 6, i),
+                    "ttt",
+                    't', new ItemStack(Blocks.tnt, 1, i)));
+            }
+        }
     }
 }

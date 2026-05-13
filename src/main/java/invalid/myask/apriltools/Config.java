@@ -10,6 +10,8 @@ public class Config {
     public static boolean usb_charger_enable = true;
     public static boolean tinted_glass_2_enable = true;
     public static boolean tinted_glass_2_original_recipe = true;
+    public static boolean etho_slab_enable = true;
+    public static float anvil_drop_chance = 1;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);

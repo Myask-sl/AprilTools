@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
+  "package": "invalid.myask.apriltools.mixins",
+  "refmap": "mixins.apriltools.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinEntityTNTPrimed_AppearAsOtherBlocks"
+  ],
+  "client": [
+    "MixinRenderTNTPrimed_AppearAsOtherBlocks"
+  ],
+  "server": []
+}
