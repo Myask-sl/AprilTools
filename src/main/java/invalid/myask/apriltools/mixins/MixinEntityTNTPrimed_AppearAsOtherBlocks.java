@@ -11,12 +11,15 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import invalid.myask.apriltools.Config;
 import invalid.myask.apriltools.ducks.IBlockFacaded;
 
 @Mixin(EntityTNTPrimed.class)
 public class MixinEntityTNTPrimed_AppearAsOtherBlocks implements IBlockFacaded {
     @Unique
     Block apriltools$Skin = Blocks.tnt;
+    @Unique
+    int apriltools$SkinMeta = 0;
 
     @Override
     public void apriltools$setFacade(Block newFace) {
@@ -28,10 +31,22 @@ public class MixinEntityTNTPrimed_AppearAsOtherBlocks implements IBlockFacaded {
         return apriltools$Skin;
     }
 
+    @Override
+    public void apriltools$setFacadeMeta(int in) {
+        if (in >= 0 && in <= Config.max_meta)
+            apriltools$SkinMeta = in;
+    }
+
+    @Override
+    public int apriltools$getFacadeMeta() {
+        return apriltools$SkinMeta;
+    }
+
     @Inject(method = "writeEntityToNBT",
     at = @At("TAIL"))
     private void apriltools$writeFacade(NBTTagCompound tagCompound, CallbackInfo ci) {
         tagCompound.setString("facade", apriltools$Skin.getUnlocalizedName().substring(5));
+        tagCompound.setInteger("facadeMeta", apriltools$SkinMeta);
     }
 
     @Inject(method = "readEntityFromNBT",
@@ -40,5 +55,6 @@ public class MixinEntityTNTPrimed_AppearAsOtherBlocks implements IBlockFacaded {
         String blockName = tagCompound.getString("facade");
         apriltools$Skin = Block.getBlockFromName(blockName);
         if (apriltools$Skin == null) apriltools$Skin = Blocks.tnt;
+        apriltools$SkinMeta = tagCompound.getInteger("facadeMeta");
     }
 }

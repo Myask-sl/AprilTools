@@ -12,6 +12,7 @@ public class Config {
     public static boolean tinted_glass_2_original_recipe = true;
     public static boolean etho_slab_enable = true;
     public static float anvil_drop_chance = 1;
+    public static int max_meta = 15;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
