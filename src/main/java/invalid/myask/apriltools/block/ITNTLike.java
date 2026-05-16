@@ -22,7 +22,7 @@ public interface ITNTLike {
     }
     default void explodeMe(World w, int x, int y, int z, EntityLivingBase theDynamiterByRobertLouisStevenson, boolean shortenFuse, boolean sound) {
         if (!w.isRemote) {
-            EntityBoobyTrapPrimed halfABombOrMore = new EntityBoobyTrapPrimed(w, ((float) x + 0.5F), ((float) y + 0.5F), ((float) z + 0.5F), theDynamiterByRobertLouisStevenson);
+            EntityBoobyTrapPrimed halfABombOrMore = new EntityBoobyTrapPrimed(w, ((double) x + 0.5), ((double) y + 0.5), ((double) z + 0.5), theDynamiterByRobertLouisStevenson);
             ((IBlockFacaded)halfABombOrMore).apriltools$setFacade((Block)this, w.getBlockMetadata(x, y, z));
             halfABombOrMore.setToon(amToony());
             if (shortenFuse)

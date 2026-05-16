@@ -17,7 +17,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockEthoSlab extends BlockSlab implements ITNTLike {
+public class BlockEthoSlab extends BlockSlab implements ITNTLike, IBlockBoundsByMeta {
     public BlockEthoSlab(boolean isDouble) {
         super(isDouble, Material.tnt);
         useNeighborBrightness = !isDouble;
@@ -25,7 +25,7 @@ public class BlockEthoSlab extends BlockSlab implements ITNTLike {
 
     @Override
     public String func_150002_b(int stackDamage) {
-        return (stackDamage & 1) == 0 ? "tnt_slab" : "volatile_tnt_slab";
+        return (stackDamage & 1) == 0 ? "tile.tnt_slab" : "tile.volatile_tnt_slab";
     }
 
     @Override
@@ -107,5 +107,17 @@ public class BlockEthoSlab extends BlockSlab implements ITNTLike {
     @Override
     public boolean canDropFromExplosion(Explosion explosionIn) {
         return false;
+    }
+
+    @Override
+    public void setBlockBoundsBasedOnMeta(long meta) {
+        if ((meta & 8) == 8)
+        {
+            this.setBlockBounds(0.0F, 0.5F, 0.0F, 1.0F, 1.0F, 1.0F);
+        }
+        else
+        {
+            this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+        }
     }
 }

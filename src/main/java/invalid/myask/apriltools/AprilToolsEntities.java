@@ -8,10 +8,9 @@ public class AprilToolsEntities {
     public static void register() {
         int id = 0;
 
-        EntityRegistry.registerModEntity(EntityBoobyTrapPrimed.class, "boobyTrap", id++, AprilTools.instance, 30, 1, true);
+        EntityRegistry.registerModEntity(EntityBoobyTrapPrimed.class, "booby_trap", id++, AprilTools.instance, 32, 10, true);
 
-        EntityRegistry.EntityRegistration er = EntityRegistry.instance().lookupModSpawn(EntityBoobyTrapPrimed.class, false);
-        er.setCustomSpawning(null, false);
+        EntityRegistry.instance().lookupModSpawn(EntityBoobyTrapPrimed.class, false).setCustomSpawning(null, false);
         //extenders of vanilla entities must use this to not be subsumed in packet
 
     }
